@@ -8,7 +8,7 @@ public class PlayerManager {
 		Scanner input = new Scanner (System.in);
 		
 		while (num != 6) {
-			System.out.println("1. Add Players");
+			System.out.println("\n1. Add Players");
 			System.out.println("2. Delete Players");
 			System.out.println("3. Edit Players");
 			System.out.println("4. View Players");
