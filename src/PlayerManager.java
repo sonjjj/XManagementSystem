@@ -12,7 +12,7 @@ public class PlayerManager {
 			System.out.println("2. Delete Players");
 			System.out.println("3. Edit Players");
 			System.out.println("4. View Players");
-			System.out.println("5. Show Players");
+			System.out.println("5. Show a Menu");
 			System.out.println("6. Exit");
 			System.out.println("\nSelect one number between 1 - 6: ");
 			num = input.nextInt();
