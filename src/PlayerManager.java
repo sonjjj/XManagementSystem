@@ -17,16 +17,16 @@ public class PlayerManager {
 			num = input.nextInt();
 
 			if (num == 1) {
-				addStudent();
+				addPlayer();
 			}
 			else if (num == 2) {
-				deleteStudent();
+				deletePlayer();
 			}
 			else if (num == 3) {
-				editStudent();
+				editPlayer();
 			}
 			else if (num == 4) {
-				viewStudent();
+				viewPlayer();
 			}
 			else {
 				continue;
@@ -34,37 +34,37 @@ public class PlayerManager {
 		}
 	}
 	
-	public static void addStudent() {
+	public static void addPlayer() {
 		Scanner input = new Scanner(System.in);
 		
-		System.out.print("Student ID: ");
-		int studentId = input.nextInt();
+		System.out.print("Player ID: ");
+		int playerId = input.nextInt();
 		
-		System.out.print("Student Name: ");
-		String studentName = input.next();
+		System.out.print("Player Name: ");
+		String playerName = input.next();
 		
-		System.out.print("Student email adress: ");
-		String studentEmail = input.next();
+		System.out.print("Player email adress: ");
+		String playerEmail = input.next();
 		
-		System.out.print("Student Phone number: ");
-		String studentPhone = input.next();
+		System.out.print("Player Phone number: ");
+		String playerPhone = input.next();
 	}
 	
-	public static void deleteStudent() {
+	public static void deletePlayer() {
         Scanner input = new Scanner(System.in);
-		System.out.print("Student ID: ");
-		int studentId = input.nextInt();
+		System.out.print("Player ID: ");
+		int playerId = input.nextInt();
 	}
 		
-	public static void editStudent() {
+	public static void editPlayer() {
         Scanner input = new Scanner(System.in);
-		System.out.print("Student ID: ");
-		int studentId = input.nextInt();
+		System.out.print("Player ID: ");
+		int playerId = input.nextInt();
 	}
 	
-	public static void viewStudent() {
+	public static void viewPlayer() {
         Scanner input = new Scanner(System.in);
-		System.out.print("Student ID: ");
-		int studentId = input.nextInt();
+		System.out.print("Player ID: ");
+		int playerId = input.nextInt();
 	}
 }
