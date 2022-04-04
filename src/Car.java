@@ -9,7 +9,7 @@ public class Car { // 생성자, 함수 세가지
 	public Car() { // 기본 생성자
 	}
 	
-	public Car(int year, String maker, double speed) {
+	public Car(int year, String maker, double speed) { // 클래스 레벨 필드를 생성자를 호출해 저장할 수 있도록 함
 		this.year = year;
 		this.maker = maker;
 		this.speed = speed;
