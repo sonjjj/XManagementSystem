@@ -16,7 +16,7 @@ public class CenterPlayer extends Player {
 		char answer = 'x';
 		while (answer != 'y' && answer != 'Y' && answer != 'n' && answer != 'N')
 		{
-			System.out.print("Does your blocking points over 5 points? (Y/N)");
+			System.out.print("Does your blocking points over 10 points? (Y/N)");
 			answer = input.next().charAt(0);
 			
 			if (answer == 'y' || answer == 'Y') {
