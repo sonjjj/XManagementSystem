@@ -1,5 +1,4 @@
-
-public class CalculatesMatrix {
+public class Matrix {
 
 	public static void main(String[] args) {
 		int[][] matrix1 = {{1, 0, 2}, {-1, 3, 1}};
