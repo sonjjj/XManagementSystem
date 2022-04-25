@@ -2,7 +2,7 @@ package player;
 
 public enum PlayerPosition {
 	Wingspiker,
-	Center,
 	Setter,
+	Center,
 	Libero
 }
