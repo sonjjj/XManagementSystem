@@ -9,7 +9,8 @@ public class MenuManager {
 		int num = -1;
 
 		while (num != 5) {
-			System.out.println("\n1. Add Players");
+			System.out.println("\n*** Player Management System Menu ***");
+			System.out.println("1. Add Players");
 			System.out.println("2. Delete Players");
 			System.out.println("3. Edit Players");
 			System.out.println("4. View Players");
@@ -27,7 +28,7 @@ public class MenuManager {
 				playerManager.editPlayer();
 			}
 			else if (num == 4) {
-				playerManager.viewPlayer();
+				playerManager.viewPlayers();
 			}
 			else {
 				continue;
