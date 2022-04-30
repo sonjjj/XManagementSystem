@@ -12,12 +12,24 @@ public class Player {
 	public Player() {  
 	}
 	
+	public Player(PlayerPosition position) {
+		this.position = position;
+	}
+	
 	public Player(String name, int id) {
 		this.name = name; // 필드의 name과 변수 name 구분위한 this
 		this.id = id;
 	}
 	
 	public Player(String name, int id, int point, String team) {
+		this.name = name;
+		this.id = id;
+		this.point = point;
+		this.team = team;
+	}
+	
+	public Player(PlayerPosition position, String name, int id, int point, String team) {
+		this.position = position;
 		this.name = name;
 		this.id = id;
 		this.point = point;
@@ -65,7 +77,27 @@ public class Player {
 	}
 	
 	public void printInfo() { // static 빠진이유: 메모리에 바로 올릴 필요 없음
-		System.out.println("name: " + name + " | id: " + id + " | points: " + point + " | team: " + team);
+	// 선수 종류에 따라 바뀔 예정	
+		String pos = "none";
+		
+		switch(this.position) {
+		case Wingspiker:
+			pos = "Wing";
+			break;
+		case Setter:
+			pos = "Setter";
+			break;
+		case Center:
+			pos = "Center";
+			break;
+		case Libero:
+			pos = "Libero";
+			break;
+		default: //모든 케이스가 아닌 경우
+			
+		}
+		
+		System.out.println("position" + pos + " | name: " + name + " | id: " + id + " | points: " + point + " | team: " + team);
 	}
 	
 	public void getUserInput(Scanner input) {
