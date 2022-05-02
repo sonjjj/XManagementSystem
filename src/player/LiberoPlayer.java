@@ -20,8 +20,8 @@ public class LiberoPlayer extends Player {
 		String name = input.next();
 		this.setName(name);
 		
-//		System.out.println("Player receiving points: 0");
-//		this.setPoint(0);
+		System.out.println("Player receiving points: 0");
+		this.setPoint(0);
 		
 		char answer1 = 'x';
 		while (answer1 != 'y' && answer1 != 'Y' && answer1 != 'n' && answer1 != 'N')
@@ -91,7 +91,7 @@ public class LiberoPlayer extends Player {
 				
 			}
 			
-			System.out.println("position: " + pos + " | name: " + name + " | id: " + id + " | Defense points: " + point + " | team: " + team);
+			System.out.println("position: " + pos + " | name: " + name + " | id: " + id + " | defensing points: "+ point + " | team: " + team);
 		}
 
 }
