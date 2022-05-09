@@ -1,15 +1,17 @@
-import java.util.ArrayList;
+import java.util.ArrayList; 
 import java.util.Scanner;
 
 import player.CenterPlayer;
 import player.LiberoPlayer;
 import player.Player;
+import player.PlayerPosition;
 import player.SetterPlayer;
+import player.PlayerInput;
 import player.WingspikerPlayer;
 
 public class PlayerManager {
-	ArrayList<Player> players = new ArrayList<Player>();
-	
+	ArrayList<PlayerInput> players = new ArrayList<PlayerInput>();
+	// PlayerInput으로 넣은 결과의 내용을 나열
 	Scanner input;
 	PlayerManager(Scanner input) {
 		this.input = input;
@@ -17,7 +19,7 @@ public class PlayerManager {
 	
 	public void addPlayer() {
 		int position = 0;
-		Player player;
+		PlayerInput playerinput;
 		
 		while (true) {
 			System.out.println("1 : Wingspiker");
@@ -28,31 +30,31 @@ public class PlayerManager {
 			position = input.nextInt();
 			
 			if (position == 1) {
-				player = new WingspikerPlayer();
-				player.getUserInput(input);
-				players.add(player); // 배열에 new player 항목 추가
+				playerinput = new WingspikerPlayer(PlayerPosition.Wingspiker);
+				playerinput.getUserInput(input);
+				players.add(playerinput); // 배열에 new player 항목 추가
 				break;
 			}
 			else if (position == 2) {
-				player = new SetterPlayer();
-				player.getUserInput(input);
-				players.add(player);
+				playerinput = new SetterPlayer(PlayerPosition.Setter);
+				playerinput.getUserInput(input);
+				players.add(playerinput);
 				break;
 			}
 			else if (position == 3) {
-				player = new CenterPlayer();
-				player.getUserInput(input);
-				players.add(player);
+				playerinput = new CenterPlayer(PlayerPosition.Center);
+				playerinput.getUserInput(input);
+				players.add(playerinput);
 				break;
 			}
 			else if (position == 4) {
-				player = new LiberoPlayer();
-				player.getUserInput(input);
-				players.add(player);
+				playerinput = new LiberoPlayer(PlayerPosition.Libero);
+				playerinput.getUserInput(input);
+				players.add(playerinput);
 				break;
 			}
 			else {
-				System.out.print("Select num for Player Position between !! 1 - 4 !!: ");
+				System.out.println("!! Select num for Player Position between 1 - 4 !!: ");
 			}
 		}
 	}
@@ -90,9 +92,9 @@ public class PlayerManager {
 		
 		for (int i = 0; i < players.size(); i++) {
 			
-			Player player = players.get(i);
+			PlayerInput playerInput = players.get(i);
 			
-			if (player.getId() == playerId) {
+			if (playerInput.getId() == playerId) {
 				int num = -1;
 				while (num != 5) {
 					System.out.println("** Edit Menu **");
@@ -107,22 +109,22 @@ public class PlayerManager {
 					if (num == 1) {
 						System.out.print("Player ID: ");
 						int id = input.nextInt();
-						player.setId(id);
+						playerInput.setId(id);
 					}
 					else if (num == 2) {
 						System.out.print("Player name: ");
 						String name = input.next();
-						player.setName(name);
+						playerInput.setName(name);
 					}
 					else if (num == 3) {
 						System.out.print("Player Point: ");
 						int point = input.nextInt();
-						player.setPoint(point);
+						playerInput.setPoint(point);
 					}
 					else if (num == 4) {
 						System.out.print("Player team: ");
 						String team = input.next();
-						player.setTeam(team);
+						playerInput.setTeam(team);
 					}
 					else {
 						continue;
@@ -142,5 +144,4 @@ public class PlayerManager {
 			players.get(i).printInfo();
 		}
 	}
-
 }
