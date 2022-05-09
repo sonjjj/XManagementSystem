@@ -2,8 +2,8 @@ package player;
 
 import java.util.Scanner;
 
-public class Player {
-    protected PlayerPosition position = PlayerPosition.Wingspiker; // 초기값 지정
+public abstract class Player { // 객체를 생성하지 않는다.
+    protected PlayerPosition position = PlayerPosition.Wingspiker;
 	protected String name;
 	protected int id;
 	protected int point;
@@ -76,46 +76,6 @@ public class Player {
 		this.team = team;
 	}
 	
-	public void printInfo() { // static 빠진이유: 메모리에 바로 올릴 필요 없음
-	// 선수 종류에 따라 바뀔 예정	
-		String pos = "none";
-		
-		switch(this.position) {
-		case Wingspiker:
-			pos = "Wing";
-			break;
-		case Setter:
-			pos = "Setter";
-			break;
-		case Center:
-			pos = "Center";
-			break;
-		case Libero:
-			pos = "Libero";
-			break;
-		default: //모든 케이스가 아닌 경우
-			
-		}
-		
-		System.out.println("position" + pos + " | name: " + name + " | id: " + id + " | points: " + point + " | team: " + team);
-	}
+	public abstract void printInfo();
 	
-	public void getUserInput(Scanner input) {
-		System.out.print("Player ID: ");
-		int id = input.nextInt();
-		this.setId(id); // 내 객체에 대한 각각의 값들이 input 통해 들어감
-		 
-		System.out.print("Player Name: ");
-		String name = input.next();
-		this.setName(name);
-		
-		System.out.print("Player points: ");
-		int point = input.nextInt();
-		this.setPoint(point);
-		
-		System.out.print("Player team: ");
-		String team = input.next();
-		this.setTeam(team);
-	}
-
 }
