@@ -2,7 +2,7 @@ package player;
 
 import java.util.Scanner;
 
-public class CenterPlayer extends Player {
+public class CenterPlayer extends Player implements PlayerInput{
 	
 	public CenterPlayer(PlayerPosition position) {
 		super(position);
@@ -11,7 +11,7 @@ public class CenterPlayer extends Player {
 	public void getUserInput(Scanner input) {
 		System.out.print("Player ID: ");
 		int id = input.nextInt();
-		this.setId(id); // 내 객체에 대한 각각의 값들이 input 통해 들어감
+		this.setId(id);
 		 
 		System.out.print("Player Name: ");
 		String name = input.next();
@@ -61,8 +61,7 @@ public class CenterPlayer extends Player {
 			}
 		}
 	}
-	public void printInfo() { // 추가 정보 출력
-		// 선수 종류에 따라 바뀔 예정	
+	public void printInfo() {
 			String pos = "none";
 			
 			switch(this.position) {
