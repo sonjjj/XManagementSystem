@@ -2,7 +2,7 @@ package player;
 
 import java.util.Scanner;
 
-public class SetterPlayer extends Player {
+public class SetterPlayer extends Player implements PlayerInput{
 	
 	public SetterPlayer(PlayerPosition position) {
 		super(position);
@@ -11,7 +11,7 @@ public class SetterPlayer extends Player {
 	public void getUserInput(Scanner input) {
 		System.out.print("Player ID: ");
 		int id = input.nextInt();
-		this.setId(id); // 내 객체에 대한 각각의 값들이 input 통해 들어감
+		this.setId(id);
 		 
 		System.out.print("Player Name: ");
 		String name = input.next();
@@ -24,7 +24,7 @@ public class SetterPlayer extends Player {
 			answer1 = input.next().charAt(0);
 			
 			if (answer1 == 'y' || answer1 == 'Y') {
-				System.out.print("Player setting points: ");
+				System.out.print("Player setting scored points: ");
 				int point = input.nextInt();
 				this.setPoint(point);
 				break;
@@ -61,8 +61,7 @@ public class SetterPlayer extends Player {
 			}
 		}
 	}
-	public void printInfo() { // 추가 정보 출력
-		// 선수 종류에 따라 바뀔 예정	
+	public void printInfo() { 
 			String pos = "none";
 			
 			switch(this.position) {
@@ -82,6 +81,6 @@ public class SetterPlayer extends Player {
 				
 			}
 			
-			System.out.println("position: " + pos + " | name: " + name + " | id: " + id + " | Setting points: " + point + " | team: " + team);
+			System.out.println("position: " + pos + " | name: " + name + " | id: " + id + " | Setting scored points: " + point + " | team: " + team);
 		}
 }
