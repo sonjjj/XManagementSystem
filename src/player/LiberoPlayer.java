@@ -2,10 +2,10 @@ package player;
 
 import java.util.Scanner;
 
-public class LiberoPlayer extends Player {
+public class LiberoPlayer extends Player implements PlayerInput{
 	
-//	protected int defensepoint;
-//	protected String businessteam;
+	protected int defensepoint;
+	protected String businessteam = "-businessteam-";
 	
 	public LiberoPlayer(PlayerPosition position) {
 		super(position);
@@ -20,8 +20,8 @@ public class LiberoPlayer extends Player {
 		String name = input.next();
 		this.setName(name);
 		
-		System.out.println("Player receiving points: 0");
-		this.setPoint(0);
+//		System.out.println("Player offensing points: 0");
+//		this.setPoint(0);
 		
 		char answer1 = 'x';
 		while (answer1 != 'y' && answer1 != 'Y' && answer1 != 'n' && answer1 != 'N')
@@ -31,8 +31,8 @@ public class LiberoPlayer extends Player {
 			
 			if (answer1 == 'y' || answer1 == 'Y') {
 				System.out.print("Player defensing points: ");
-				int point = input.nextInt();
-				this.setPoint(point);
+				int defensepoint = input.nextInt();
+				this.setPoint(defensepoint);
 				break;
 			}
 			
@@ -61,7 +61,7 @@ public class LiberoPlayer extends Player {
 			}
 			
 			else if (answer2 == 'n' || answer2 == 'N') {  // 실업 팀인 경우
-				this.setTeam("-businessteam-");
+				this.setTeam(businessteam);
 				break;
 			}
 			
@@ -70,8 +70,7 @@ public class LiberoPlayer extends Player {
 		}
 	}
 	
-	public void printInfo() { // 추가 정보 출력
-		// 선수 종류에 따라 바뀔 예정	
+	public void printInfo() {
 			String pos = "none";
 			
 			switch(this.position) {
