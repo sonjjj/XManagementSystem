@@ -2,7 +2,9 @@ package player;
 
 import java.util.Scanner;
 
-public abstract class Player { // 객체를 생성하지 않는다.
+import exceptions.IDException;
+
+public abstract class Player implements PlayerInput{ // 객체를 생성하지 않는다.
     protected PlayerPosition position = PlayerPosition.Wingspiker;
 	protected String name;
 	protected int id;
@@ -56,7 +58,10 @@ public abstract class Player { // 객체를 생성하지 않는다.
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(int id) throws IDException{
+		if (id > 25) {
+			throw new IDException();
+		}
 		this.id = id;
 	}
 
@@ -78,4 +83,57 @@ public abstract class Player { // 객체를 생성하지 않는다.
 	
 	public abstract void printInfo();
 	
+	public void setPlayerID(Scanner input) {
+		int id = 50;
+		
+		while (id > 25) {
+			System.out.print("Player ID: ");
+			id = input.nextInt();
+			
+			try {
+				this.setId(id);
+			} catch (IDException e) {
+				System.out.println("Incorret player ID. please enter the right number.");
+			}
+		}
+	}
+	
+	public void setPlayerName(Scanner input) {
+		System.out.print("Player name: ");
+		String name = input.next();
+		this.setName(name);
+	}
+	
+	public void setPlayerPoint(Scanner input) {
+		System.out.print("Player Point: ");
+		int point = input.nextInt();
+		this.setPoint(point);
+	}
+	
+	public void setPlayerTeam(Scanner input) {
+		System.out.print("Player team: ");
+		String team = input.next();
+		this.setTeam(team);
+	}
+	
+	public String getPos() {
+		String pos = "none";
+		
+		switch(this.position) {
+		case Wingspiker:
+			pos = "Wing";
+			break;
+		case Setter:
+			pos = "Setter";
+			break;
+		case Center:
+			pos = "Center";
+			break;
+		case Libero:
+			pos = "Libero";
+			break;
+		default: //모든 케이스가 아닌 경우
+		}
+		return pos;
+	}
 }
