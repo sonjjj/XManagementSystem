@@ -1,20 +1,24 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import exceptions.IDException;
 import player.CenterPlayer;
 import player.LiberoPlayer;
-import player.Player;
 import player.PlayerPosition;
 import player.SetterPlayer;
 import player.PlayerInput;
 import player.WingspikerPlayer;
 
-public class PlayerManager {
+public class PlayerManager implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 757291882363362797L;
+	
 	ArrayList<PlayerInput> players = new ArrayList<PlayerInput>();
 	// PlayerInput으로 넣은 결과의 내용을 나열
-	Scanner input;
+	transient Scanner input; // 저장하고 싶지 않다
 	PlayerManager(Scanner input) {
 		this.input = input;
 	}
