@@ -1,11 +1,16 @@
 package player;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 import exceptions.IDException;
 
-public abstract class Player implements PlayerInput{ // 객체를 생성하지 않는다.
-    protected PlayerPosition position = PlayerPosition.Wingspiker;
+public abstract class Player implements PlayerInput, Serializable{ // 객체를 생성하지 않는다.
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -7729294073899481806L;
+	protected PlayerPosition position = PlayerPosition.Wingspiker;
 	protected String name;
 	protected int id;
 	protected int point;
