@@ -8,7 +8,6 @@ import java.util.logging.SimpleFormatter;
 
 public class EventLogger {
 	FileHandler filehandler;
-	
 	LogManager logmanager;
 	Logger logger; 
 
@@ -17,18 +16,15 @@ public class EventLogger {
 			logmanager = LogManager.getLogManager();
 			logger = logmanager.getLogger(Logger.GLOBAL_LOGGER_NAME);
 			filehandler = new FileHandler(fileName);
-			
-			filehandler.setFormatter(new SimpleFormatter());
-			
+			filehandler.setFormatter(new SimpleFormatter()); // 보기 쉬운 형태로 바꿔줌
 			logger.addHandler(filehandler);
 			
-			 
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 	
 	public void log(String logMessage) {
-		logger.info(logMessage);
+		logger.info(logMessage); // 
 	}
 }
