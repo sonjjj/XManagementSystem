@@ -10,10 +10,10 @@ public class PlayerViewer extends JFrame {
 	public PlayerViewer() {
 		//String column[] = {"ID", "NAME", "POINT", "TEAM"};
 		DefaultTableModel model = new DefaultTableModel();
-		model.addColumn("ID: ");
-		model.addColumn("Name: ");
-		model.addColumn("Point: ");
-		model.addColumn("Team: ");
+		model.addColumn("ID");
+		model.addColumn("Name");
+		model.addColumn("Point");
+		model.addColumn("Team");
 		
 		JTable table = new JTable(model);
 		JScrollPane sp = new JScrollPane(table);
@@ -23,5 +23,4 @@ public class PlayerViewer extends JFrame {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setVisible(true);
 	}
-
 }
