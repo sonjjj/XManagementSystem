@@ -45,7 +45,7 @@ public class PlayerAdder extends JFrame {
 		panel.add(new JButton("save"));
 		panel.add(new JButton("cancel"));
 		
-		SpringUtilities.makeCompactGrid(panel, 5, 2, 6, 6, 6, 6); // 첫번째숫자 - 2열 표시
+		SpringUtilities.makeCompactGrid(panel, 5, 2, 6, 6, 6, 6); // 첫번째숫자 - 열 표시
 		
 		this.setSize(300, 300);
 		this.setContentPane(panel);
@@ -53,5 +53,4 @@ public class PlayerAdder extends JFrame {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setVisible(true);
 	}
-
 }
