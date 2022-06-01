@@ -164,6 +164,10 @@ public class PlayerManager implements Serializable{
 		}
 	}
 	
+	public int size() {
+		return players.size();
+	}
+	
 	public void showEditMenu() {
 		System.out.println("** Edit Menu **");
 		System.out.println("1. Edit ID");
