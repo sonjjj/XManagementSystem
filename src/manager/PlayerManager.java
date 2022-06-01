@@ -1,3 +1,5 @@
+package manager;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -69,7 +71,7 @@ public class PlayerManager implements Serializable{
 				if(input.hasNext()) {
 					input.next();
 				}
-				position = 0;
+				position = -1;
 			}
 		}
 	}
@@ -103,6 +105,7 @@ public class PlayerManager implements Serializable{
 		}
 		return index;
 	}
+	
 	public int removefromPlayers(int index, int playerId) {
 		if (index > -1) { 
 			players.remove(index);
@@ -115,6 +118,7 @@ public class PlayerManager implements Serializable{
 			return -1;
 		}
 	}
+	
 	public void editPlayer() {
 		System.out.print("Player ID: ");
 		int playerId = input.nextInt();
